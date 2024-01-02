@@ -131,8 +131,8 @@ def get_file_content(file_path) -> list[str]:
 def get_all_file_paths(dir_path) -> list[str]:
     # Check if the directory exists
     if not os.path.isdir(dir_path):
-        console.print(f"Directory [red]{
-                      dir_path}[/red] does not exist", style="bold red")
+        console.print(
+            f"Directory [red]{dir_path}[/red] does not exist", style="bold red")
         exit(1)
 
     # Print the directory path
