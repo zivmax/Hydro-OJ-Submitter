@@ -84,8 +84,8 @@ def login_to_website(username: str, password: str) -> requests.Session:
             f"Login failed with status code [red]{response.status_code}[/red]", style="bold red")
         exit(1)
 
-    console.print(f"Logged in as [magenta]{
-                  username}[/magenta]", style="bold green")
+    console.print(
+        f"Logged in as [magenta]{username}[/magenta]", style="bold green")
     return session
 
 
