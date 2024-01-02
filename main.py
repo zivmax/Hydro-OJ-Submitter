@@ -362,9 +362,13 @@ def handle_single_file_submission(username):
         with open(submit_file_path, 'w') as f:
             f.write("".join(file_lines))
 
-    if config.get('preview', False):
-        print_file_content(submit_file_path)
-    console.print()
+        if config.get('preview', False):
+            print_file_content(submit_file_path)
+        console.print()
+    else:
+        if config.get('preview', False):
+            print_file_content(submit_file_path)
+        console.print()
 
     confirm_submission()
     return submit_file_path

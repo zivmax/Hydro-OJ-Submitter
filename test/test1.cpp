@@ -1,4 +1,4 @@
-// @Author: zivmax
+// @Author: john
 
 #include <iostream>
 

@@ -1,5 +1,3 @@
-// @Author: zivmax
-
 #include <iostream>
 
 int main()
