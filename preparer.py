@@ -136,7 +136,7 @@ class Preparer:
                 exit(Colored.red("TIME OUT!"))
         else:
             PreRequests = Popen(
-                f"pip install {self._module_name} --user",
+                f"pip install {self._module_name}",
                 shell=True,
                 stdout=PIPE,
                 stdin=PIPE,
