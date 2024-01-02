@@ -1,0 +1,30 @@
+{
+    "oj_url": "https://acm.shanghaitech.edu.cn",
+    "username": "",
+    "password": "",
+    "preview": true,
+    "course_id": "CS101F23PA",
+    "default_pid": "",
+    "problems": [
+        {
+            "lang": "cc.cc20",
+            "tid": "6585ec440ad5c1fc972fa55b",
+            "pid": "301",
+            "file_path": ".\\test\\test1.cpp"
+        },
+        {
+            "lang": "cc.cc20",
+            "tid": "6585ec440ad5c1fc972fa55b",
+            "pid": "302",
+            "file_path": ".\\test\\test1.cpp"
+        },
+        {
+            "lang": "cc.cc20",
+            "tid": "6585ec440ad5c1fc972fa55b",
+            "multi_file": true,
+            "pid": "303",
+            "dir_path": ".\\test",
+            "excluded_extensions": [".md", ".pdf", ".exe", ".zip"]
+        }
+    ]
+}

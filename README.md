@@ -32,6 +32,8 @@ The program relies on a configuration file (`config.json`) to store the followin
 
 Make sure to update the `config.json` file with your own account information and problem details before running the program.
 
+You can use the `config.json.example` file as a template.
+
 ## Usage
 
 To use the program, follow these steps:

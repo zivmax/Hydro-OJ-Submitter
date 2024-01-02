@@ -1,8 +1,8 @@
 {
     "oj_url": "https://acm.shanghaitech.edu.cn",
-    "username": "",
-    "password": "",
-    "preview": false,
+    "username": "zivmax",
+    "password": "SHT12180079tlz!100110",
+    "preview": true,
     "course_id": "CS101F23PA",
     "default_pid": "",
     "problems": [
@@ -24,7 +24,7 @@
             "multi_file": true,
             "pid": "303",
             "dir_path": ".\\test",
-            "excluded_extensions": [".md", ".pdf"]
+            "excluded_extensions": [".md", ".pdf", ".exe", ".zip"]
         }
     ]
 }
