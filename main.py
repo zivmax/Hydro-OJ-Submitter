@@ -273,8 +273,7 @@ def confirm_submission() -> None:
 
 
 def submit_file(session: requests.Session, file_path: str, full_problem_id: str, problem: dict) -> requests.Response:
-    submit_url = f"{config['oj_url']
-                    }/p/{full_problem_id}/submit?tid={problem['tid']}"
+    submit_url = f"{config['oj_url']}/p/{full_problem_id}/submit?tid={problem['tid']}"
 
     with open(file_path, 'rb') as f:
         file_content = f.read()
