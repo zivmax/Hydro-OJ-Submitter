@@ -152,11 +152,11 @@ def create_temp_single_file() -> str:
 def create_temp_dir() -> str:
     temp_dir = tempfile.mkdtemp()
     dir_path = problem['dir_path']
-    excluded_extensions = problem.get('excluded_extensions', [])
+    excluded_files = problem.get('excluded_files', [])
 
     # Copy all files from the source directory to the temp directory
     for file_path in get_all_file_paths(dir_path):
-        if not any(file_path.endswith(ext) for ext in excluded_extensions):
+        if not any(file_path.endswith(ext) for ext in excluded_files):
             temp_file_path = os.path.join(
                 temp_dir, os.path.basename(file_path))
             shutil.copy(file_path, temp_file_path)

@@ -10,21 +10,21 @@
             "lang": "cc.cc20",
             "tid": "6585ec440ad5c1fc972fa55b",
             "pid": "301",
-            "file_path": ".\\test\\test1.cpp"
+            "file_path": "D:\\CS_learning\\Courses\\SIST\\CS101\\HWs\\CS101PAs\\pa3_release\\prob1\\linear.cpp"
         },
         {
             "lang": "cc.cc20",
             "tid": "6585ec440ad5c1fc972fa55b",
             "pid": "302",
-            "file_path": ".\\test\\test1.cpp"
+            "file_path": "D:\\CS_learning\\Courses\\SIST\\CS101\\HWs\\CS101PAs\\pa3_release\\prob2\\vcg.cpp"
         },
         {
             "lang": "cc.cc20",
             "tid": "6585ec440ad5c1fc972fa55b",
             "multi_file": true,
             "pid": "303",
-            "dir_path": ".\\test",
-            "excluded_extensions": [".md", ".pdf", ".exe", ".zip"]
+            "dir_path": "D:\\CS_learning\\Courses\\SIST\\CS101\\HWs\\CS101PAs\\pa3_release\\prob3",
+            "excluded_files": [".md", ".pdf", ".exe", ".zip", ".hpp"]
         }
     ]
 }

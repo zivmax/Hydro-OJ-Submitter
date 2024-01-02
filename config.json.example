@@ -24,7 +24,7 @@
             "multi_file": true,
             "pid": "303",
             "dir_path": ".\\test",
-            "excluded_extensions": [".md", ".pdf", ".exe", ".zip"]
+            "excluded_files": [".md", ".pdf", ".exe", ".zip"]
         }
     ]
 }

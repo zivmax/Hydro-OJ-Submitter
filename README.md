@@ -28,7 +28,8 @@ The program relies on a configuration file (`config.json`) to store the followin
   - For multi-file submissions:
     - `multi_file`: A boolean value indicating whether it's a multi-file submission.
     - `dir_path`: The path to the directory containing the code files.
-    - `excluded_extensions`: A list of file extensions to exclude from the submission.
+    - `excluded_files`: A list of file extensions to exclude from the submission.
+      - files full name (e.g., `"main.cpp"`) or file extensions (e.g., `".cpp"`).
 
 Make sure to update the `config.json` file with your own account information and problem details before running the program.
 
