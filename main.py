@@ -34,9 +34,11 @@ config: dict = {}
 problem: dict = {}
 mode: Enum
 
+
 class Mode(Enum):
     SINGLE_FILE = 1
     MULTI_FILE = 2
+
 
 def parse_args() -> argparse.Namespace:
 
@@ -129,7 +131,8 @@ def get_file_content(file_path) -> list[str]:
 def get_all_file_paths(dir_path) -> list[str]:
     # Check if the directory exists
     if not os.path.isdir(dir_path):
-        console.print(f"Directory [red]{dir_path}[/red] does not exist", style="bold red")
+        console.print(f"Directory [red]{
+                      dir_path}[/red] does not exist", style="bold red")
         exit(1)
 
     # Print the directory path
@@ -152,14 +155,16 @@ def get_all_file_paths(dir_path) -> list[str]:
             parts = rel_path.split(os.sep)
             for part in parts:
                 # Attempt to find the existing node or create a new one
-                matching_nodes = [child for child in parent_node.children if child.label == f"[dir]{part}[/dir]"]
+                matching_nodes = [
+                    child for child in parent_node.children if child.label == f"[dir]{part}[/dir]"]
                 if matching_nodes:
                     # Existing node found, use it as the parent node
                     parent_node = matching_nodes[0]
                 else:
                     # No existing node found, create a new one
-                    parent_node = parent_node.add(f"[dir]{part}[/dir]", style="green")
-        
+                    parent_node = parent_node.add(
+                        f"[dir]{part}[/dir]", style="green")
+
         # Add files to the tree
         for file in files:
             parent_node.add(f"[file]{file}[/file]", style="blue")
@@ -173,7 +178,6 @@ def get_all_file_paths(dir_path) -> list[str]:
     console.print(tree)
 
     return all_file_paths
-
 
 
 def create_temp_single_file() -> str:
@@ -234,7 +238,6 @@ def check_author_line(tmp_path: str, username: str) -> None:
         f.write(new_file)
 
 
-
 def check_author_file(tmp_path: str, username: str) -> None:
     author_file_path = os.path.join(tmp_path, 'author.txt')
     if not os.path.exists(author_file_path):
@@ -258,7 +261,8 @@ def check_author_file(tmp_path: str, username: str) -> None:
                 # remove author.txt file
                 os.remove(author_file_path)
         else:
-            console.print("Warning: Author file is empty.", style="bold yellow")
+            console.print("Warning: Author file is empty.",
+                          style="bold yellow")
 
 
 def confirm_submission() -> None:
@@ -266,7 +270,6 @@ def confirm_submission() -> None:
     if confirm.lower() not in ['yes', 'y']:
         console.print("Submission cancelled", style="bold yellow")
         exit(0)
-
 
 
 def submit_file(session: requests.Session, file_path: str, full_problem_id: str, problem: dict) -> requests.Response:
@@ -315,8 +318,8 @@ def handle_submission_response(response: requests.Response, problem_id: str) -> 
             "Submission successful, but no redirect found", style="bold green")
 
     else:
-        console.print(f"Submission failed with status code [red]{
-                      response.status_code}[/red]", style="bold red")
+        console.print(
+            f"Submission failed with status code [red]{response.status_code}[/red]", style="bold red")
 
 
 def main():
@@ -329,7 +332,7 @@ def main():
     username, password = get_account_info(args)
     session = login_to_website(username, password)
     console.print()
-    
+
     # Submit
     problem_id = get_problem_id(args)
     problem = check_problem_in_config(problem_id)
@@ -344,22 +347,27 @@ def main():
         # Prepare your files (e.g., create a zip file)
         temp_dir_path = create_temp_dir()
         console.print()
-        console.print(f"Temp directory created: [green]{temp_dir_path}[/green]")
+        console.print(
+            f"Temp directory created: [green]{temp_dir_path}[/green]")
         check_author_file(temp_dir_path, username)
         # Create a zip file
-        submit_file_path = shutil.make_archive(temp_dir_path, 'zip', temp_dir_path)
-        console.print(f"Submit zip file created: [green]{submit_file_path}[/green]")
+        submit_file_path = shutil.make_archive(
+            temp_dir_path, 'zip', temp_dir_path)
+        console.print(
+            f"Submit zip file created: [green]{submit_file_path}[/green]")
 
     else:
         submit_file_path = create_temp_single_file()
         console.print()
-        console.print(f"Submit file created: [green]{submit_file_path}[/green]")
+        console.print(
+            f"Submit file created: [green]{submit_file_path}[/green]")
         check_author_line(submit_file_path, username)
     confirm_submission()
     console.print()
 
     response = submit_file(session, submit_file_path, full_problem_id, problem)
     handle_submission_response(response, problem_id)
+
 
 if __name__ == "__main__":
     try:
