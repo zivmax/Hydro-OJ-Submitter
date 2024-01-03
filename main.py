@@ -341,6 +341,8 @@ def handle_multi_file_submission(username, full_problem_id):
     confirm_submission()
 
     if check_author_file(temp_dir_path, username):
+        console.print(
+            f"Author file matches and removed from the submission: [green]{temp_dir_path}/author.txt[/green]")
         os.remove(os.path.join(temp_dir_path, 'author.txt'))
 
     submit_file_path = shutil.make_archive(temp_dir_path, 'zip', temp_dir_path)
@@ -353,6 +355,8 @@ def handle_single_file_submission(username):
     console.print(f"Submit file created: [green]{submit_file_path}[/green]")
 
     if check_author_line(submit_file_path, username):
+        console.print(
+            f"Author line matches and removed from the submission: [green]{submit_file_path}[/green]")
         with open(submit_file_path, 'r') as f:
             file_lines = f.readlines()
         file_lines.pop(0)
