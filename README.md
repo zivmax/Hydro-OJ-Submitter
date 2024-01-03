@@ -81,7 +81,7 @@ Here are some example usages of the program:
 - The program supports both single-file and multi-file submissions.
 - For multi-file submissions, the program creates a temporary directory and zips the code files before submission.
 - The program checks the author information in the code files to ensure it matches the loggined username.
-    - For single-file submissions, the program checks the author information in first line using the following format: `<CommentSign> @Author: john`.
+    - For single-file submissions, the program checks the author information in first line using the following format: `<CommentSign> @author: john`.
     - For multi-file submissions, the program checks the author information in the `author.txt` file. In the first line, you should just write the author name without any comment sign.
 - After submission, the program prints the submission status and the URL of the submission record.
 

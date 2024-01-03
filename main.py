@@ -168,7 +168,7 @@ def check_author_line(tmp_path: str, username: str) -> bool:
     with open(tmp_path, 'r') as f:
         file_lines = f.readlines()
 
-    author_tag = "@Author: "
+    author_tag = "@author: "
     author_line = file_lines[0].strip()
     author_line_found = False
 
