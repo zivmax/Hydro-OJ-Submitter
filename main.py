@@ -330,20 +330,21 @@ def handle_multi_file_submission(username, full_problem_id):
     console.print(f"Temp directory created: [green]{temp_dir_path}[/green]")
     console.print()
 
-    console.print("Following files will be submitted:")
-    print_dir_tree(temp_dir_path)
-
     if config.get('preview', False):
         for file_path in get_all_file_paths(temp_dir_path):
             print_file_content(file_path)
     console.print()
 
-    confirm_submission()
 
     if check_author_file(temp_dir_path, username):
         console.print(
             f"Author file matches and removed from the submission: [green]{temp_dir_path}/author.txt[/green]")
         os.remove(os.path.join(temp_dir_path, 'author.txt'))
+    
+    console.print("Following files will be submitted:")
+    print_dir_tree(temp_dir_path)
+    
+    confirm_submission()
 
     submit_file_path = shutil.make_archive(temp_dir_path, 'zip', temp_dir_path)
     console.print(f"Submit zip file created: [green]{submit_file_path}[/green]")
