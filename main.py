@@ -207,9 +207,6 @@ def check_author_file(tmp_path: str, username: str) -> bool:
                     f"Fatal: The author name '{author_name}' does not match the username '{username}'", style="bold red")
                 exit(1)
             else:
-                console.print(
-                    f"Author file matches and removed from the submission: [green]author.txt[/green]")
-
                 return True
         else:
             console.print("Warning: Author file is empty.",
